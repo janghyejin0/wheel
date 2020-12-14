@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="js/jquery.js"></script>
+  <script type="text/javascript" src="js/main.js"></script>
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Take a breath</title>
+</head>
+<body>
+
+  <div class="wheel_container">
+    <img src="pic/wheel.png" data-state="play" class="wheel">
+    <div class="wheel-text">
+      <p>Click the Wheel and Take a Breath!</p>
+    </div>
+    <audio loop src="breath.wav" preload>
+  </div>
+  <div class="buddha">
+    <img src="pic/buda.png" alt="">
+    <div class="buda-text">
+      <p>Take a Breath!</p>
+    </div>
+  </div>
+  <div class="aura">
+    <img src="pic/1.png" alt="">
+    <img src="pic/2.png" class="aura2">
+  </div>
+  <script language="javascript" type="text/javascript">
+     document.querySelector("img").addEventListener("click", function(e){
+       var state = e.currentTarget.dataset.state;
+       if (state == "play") {
+           //play the gif aswell
+       	document.querySelector("audio").play();
+           e.currentTarget.dataset.state = "pause";
+       }
+       else {
+           //pause the gif aswell
+       	document.querySelector("audio").pause();
+           e.currentTarget.dataset.state = "play";
+       }
+    });
+  </script>
+</body>
+</html>
